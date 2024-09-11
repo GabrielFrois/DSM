@@ -4,4 +4,4 @@ numeros = ["um","dois","três","quatro"]*/
 
 numeros = ["um","dois","três","quatro"]
 
-console.log(numeros[0]);
+console.log("Primeiro", numeros[0]);
