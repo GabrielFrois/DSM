@@ -21,3 +21,28 @@ WHERE numero IS NULL;
 -- O resultado terá 3 registros. Dica: use os termos select, from e where, e o operador like ou ilike.
 SELECT * FROM tbfaculdade
 WHERE municipio LIKE 'F%';
+
+-- Ex 6: : Fazer uma consulta para listar os registros da tbfaculdade que estão em um bairro que possui o termo vila.
+-- O resultado terá 11 registros. Dica: use os termos select, from e where, e o operador like ou ilike.
+SELECT * FROM tbfaculdade
+WHERE bairro LIKE '%Vila%';
+
+-- Ex 7: Fazer uma consulta para listar os registros da tbfaculdade que possuem o CEP com os três últimos dígitos sendo zero.
+-- O resultado terá 6 registros. Dica: use os termos select, from e where, e o operador like.
+SELECT * FROM tbfaculdade
+WHERE cep LIKE '%000';
+
+-- Ex 8: Fazer uma consulta para listar os registros da tbfaculdade que possuem o dígito 5 na 2ª posição do CEP.
+-- O resultado terá 3 registros. Dica: use os termos select, from e where, e o operador like.
+SELECT * FROM tbfaculdade
+WHERE cep LIKE '_5%';
+
+-- Ex 9: Fazer uma consulta para listar os registros da tbfaculdade que possuem o dígito 5 na 2ª posição e o dígito 2 na penúltima posição do CEP.
+-- O resultado terá 1 registro. Dica: use os termos select, from e where. Use o operador like.
+SELECT * FROM tbfaculdade
+WHERE cep LIKE '_5%' AND cep LIKE '%2_';
+
+-- Ex 10: Fazer uma consulta para listar os registros da tbfaculdade que possuem exatamente dois dígitos no número.
+-- O resultado terá 7 registros. Dica: use os termos select, from e where, e o operador like.
+SELECT * FROM tbfaculdade
+WHERE numero LIKE '__';
