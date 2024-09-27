@@ -20,12 +20,12 @@ WHERE numero IS NULL;
 -- Ex 5: Fazer uma consulta para listar os registros da tbfaculdade que possuem o nome do município começando pela letra f.
 -- O resultado terá 3 registros. Dica: use os termos select, from e where, e o operador like ou ilike.
 SELECT * FROM tbfaculdade
-WHERE municipio LIKE 'F%';
+WHERE municipio ILIKE 'f%';
 
 -- Ex 6: : Fazer uma consulta para listar os registros da tbfaculdade que estão em um bairro que possui o termo vila.
 -- O resultado terá 11 registros. Dica: use os termos select, from e where, e o operador like ou ilike.
 SELECT * FROM tbfaculdade
-WHERE bairro LIKE '%Vila%';
+WHERE bairro ILIKE '%Vila%';
 
 -- Ex 7: Fazer uma consulta para listar os registros da tbfaculdade que possuem o CEP com os três últimos dígitos sendo zero.
 -- O resultado terá 6 registros. Dica: use os termos select, from e where, e o operador like.
