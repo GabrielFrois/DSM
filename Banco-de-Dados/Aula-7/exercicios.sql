@@ -1,59 +1,55 @@
 -- Ex 1: Fazer uma consulta para listar a quantidade de cursos por unidade. Apresente o resultado ordenado em ordem alfabética. 
 -- Renomear as colunas para Fatec e Quantidade. O resultado terá 75 registros. Dica: use o termo group by e função agrupadora count.
--- Para renomear as colunas:
-ALTER TABLE tbcurso RENAME COLUMN curso TO Fatec;
-ALTER TABLE tbcurso RENAME COLUMN curso TO Quantidade;
--- Cláusulas com as colunas já renomeadas:
-SELECT Fatec, COUNT(Quantidade) 
+SELECT unidade AS Fatec, COUNT(curso) AS Quantidade 
 FROM tbcurso
 GROUP BY Fatec
 ORDER BY Fatec ASC;
 
 -- Ex 2: Alterar a consulta do Exercício 1 para mostrar o resultado ordenado em ordem decrescente de quantidade.
 -- O resultado terá 75 registros. Dica: ordene pela quantidade.
-SELECT Fatec, COUNT(Quantidade) 
+SELECT unidade AS Fatec, COUNT(curso) AS Quantidade 
 FROM tbcurso
 GROUP BY Fatec
-ORDER BY COUNT(Quantidade) DESC;
+ORDER BY Quantidade DESC;
 
 -- Ex 3: Alterar a consulta do Exercício 2 para mostrar apenas o registro que possui a maior quantidade.
 -- O resultado terá 1 registro. Dica: use o termo limit.
-SELECT Fatec, COUNT(Quantidade) 
+SELECT unidade AS Fatec, COUNT(curso) AS Quantidade 
 FROM tbcurso
 GROUP BY Fatec
-ORDER BY COUNT(Quantidade) DESC
+ORDER BY Quantidade DESC
 LIMIT 1;
 
 -- Ex 4: Alterar a consulta do Exercício 3 para mostrar apenas o registro que possui a segunda maior quantidade.
 -- O resultado terá 1 registro. Dica: use o termo offset.
-SELECT Fatec, COUNT(Quantidade) 
+SELECT unidade AS Fatec, COUNT(curso) AS Quantidade 
 FROM tbcurso
 GROUP BY Fatec
-ORDER BY COUNT(Quantidade) DESC
+ORDER BY Quantidade DESC
 LIMIT 1
 OFFSET 1;
 
 -- Ex 5: Alterar a consulta do Exercício 1 para mostrar apenas as unidades que possuem exatamente três cursos.
 -- O resultado terá 9 registros. Dica: use o termo having.
-SELECT Fatec, COUNT(Quantidade) 
+SELECT unidade AS Fatec, COUNT(curso) AS Quantidade 
 FROM tbcurso
 GROUP BY Fatec
-HAVING COUNT(Quantidade) = 3
+HAVING COUNT(curso) = 3
 ORDER BY Fatec ASC;
 
 -- Ex 6: Fazer uma consulta para listar a quantidade de cursos por turno e unidade. Apresente o resultado ordenado em ordem alfabética. Renomear as colunas para Fatec e Quantidade.
 -- O resultado terá 211 registros.
-SELECT Fatec, turno, COUNT(Quantidade) 
+SELECT unidade AS Fatec, COUNT(curso) AS Quantidade 
 FROM tbcurso
 GROUP BY Fatec, turno
 ORDER BY Fatec ASC;
 
 -- Ex 7: Alterar a consulta do Exercício 6 para listar somente as unidades que possuem cinco cursos no mesmo turno.
 -- O resultado terá 7 registros.
-SELECT Fatec, turno, COUNT(Quantidade) 
+SELECT unidade AS Fatec, COUNT(curso) AS Quantidade 
 FROM tbcurso
 GROUP BY Fatec, turno
-HAVING COUNT(Quantidade) = 5
+HAVING COUNT(curso) = 5
 ORDER BY Fatec ASC;
 
 -- Ex 8: Alterar a consulta do Exercício 6 para listar somente o resultado de São José dos Campos.
