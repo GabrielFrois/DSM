@@ -54,9 +54,23 @@ ORDER BY Fatec ASC;
 
 -- Ex 8: Alterar a consulta do Exercício 6 para listar somente o resultado de São José dos Campos.
 -- O resultado terá 3 registros
+SELECT unidade AS Fatec, COUNT(curso) AS Quantidade 
+FROM tbcurso
+WHERE municipio = 'São José dos Campos'
+GROUP BY Fatec, turno
+ORDER BY Fatec ASC;
 
 -- Ex 9: Alterar a consulta do Exercício 8 para listar a quantidade total de vagas por turno.
 -- O resultado terá 3 registros. Dica: use a função sum.
+SELECT unidade AS Fatec, turno, SUM(vaga)
+FROM tbcurso
+WHERE municipio = 'São José dos Campos'
+GROUP BY Fatec, turno, vaga
+ORDER BY Fatec ASC;
 
 -- Ex 10: Fazer uma consulta para listar a quantidade total de vagas por turno considerando todas as unidades e cursos.
 -- O resultado terá 4 registros.
+SELECT turno, SUM(vaga)
+FROM tbcurso
+GROUP BY turno
+ORDER BY turno ASC;
