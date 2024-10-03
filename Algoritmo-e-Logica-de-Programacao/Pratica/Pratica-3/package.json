@@ -1,0 +1,20 @@
+{
+  "name": "pratica-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "um": "node ./src/um",
+    "dois": "node ./src/dois",
+    "tres": "node ./src/tres",
+    "quatro": "node ./src/quatro",
+    "cinco": "node ./src/cinco",
+    "seis": "node ./src/seis",
+    "sete": "node ./src/sete",
+    "oito": "node ./src/oito",
+    "nove": "node ./src/nove",
+    "dez": "node ./src/dez"
+  },
+  "author": "",
+  "license": "ISC"
+}
