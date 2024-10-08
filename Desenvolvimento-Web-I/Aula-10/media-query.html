@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        body{
+            background-color: yellow;
+        }
+        @media screen and (max-width:700px){
+            body{
+                background-color: orange;
+            }
+        }
+        @media screen and (max-width:600px){
+            body{
+                background-color: red;
+            }
+        }
+        @media screen and (orientation: landscape){
+            body{
+                background-color: cyan;
+            }
+        }
+        @media screen and (orientation: portrait){
+            body{
+                background-color: purple;
+            }
+        }
+        @media print{
+            body{
+                font-style: italic;
+                color:green;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Media Query
+    </div>
+</body>
+</html>
