@@ -9,7 +9,8 @@ const disciplina = {
     notas: [8.2,7.5,9]
 };
 
-const {pesos: [p1, p2]} = disciplina;
+const {p1, p2} = disciplina.notas;
+//ou da seguinte forma: const {pesos: [p1, p2]} = disciplina;
 
 console.log("Peso P1:", p1);
 console.log("Peso P2:", p2);
