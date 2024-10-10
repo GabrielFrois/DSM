@@ -15,7 +15,9 @@ const disciplina = {
         projeto: 9
     }
 };
-const {notas: {p1, p2}} = disciplina;
+
+const {p1, p2} = disciplina.notas;
+// ou da seguinte forma: const {notas: {p1, p2}} = disciplina;
 
 console.log("P1:", p1);
 console.log("P2:", p2);
