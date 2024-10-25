@@ -39,6 +39,10 @@ WHERE nota IS NOT NULL;
 
 -- Exercício 5: Fazer uma cláusula SQL para somar 0,2 pontos para os alunos que tiverem nota na disciplina de Modelagem de Banco de Dados.
 -- Dicas: Use o comando update, use o operador is not null, inclua a tbdisciplina no termo from, faça a ligação da tbmatricula e tbdisciplina no termo where.
+UPDATE tbmatricula as m
+SET nota = nota + 0.2
+FROM tbdisciplina AS d
+WHERE d.id = m.iddisciplina AND d.nome = 'Modelagem de Banco de Dados';
 
 -- Exercício 6: Fazer uma cláusula SQL para colocar a nota 5 para o Luiz Carlos na disciplina de Inglês I.
 -- Dicas: Use o comando update, inclua a tbdisciplina e tbaluno no termo from, faça a ligação da tbmatricula e tbdisciplina no termo where, faça a ligação da tbmatricula e tbaluno no termo where.
