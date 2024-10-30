@@ -46,15 +46,42 @@ WHERE d.id = m.iddisciplina AND d.nome = 'Modelagem de Banco de Dados';
 
 -- Exercício 6: Fazer uma cláusula SQL para colocar a nota 5 para o Luiz Carlos na disciplina de Inglês I.
 -- Dicas: Use o comando update, inclua a tbdisciplina e tbaluno no termo from, faça a ligação da tbmatricula e tbdisciplina no termo where, faça a ligação da tbmatricula e tbaluno no termo where.
+--
+UPDATE tbmatricula AS m
+SET nota = 5.0
+FROM tbaluno AS a, tbdisciplina AS d
+WHERE a.id = m.idaluno AND d.id = m.iddisciplina
+AND a.nome = 'Luiz Carlos' AND d.nome = 'Inglês I';
+-- Consulta:
+SELECT d.nome, m.nota FROM tbaluno AS a, tbmatricula AS m, tbdisciplina AS d
+WHERE a.id = m.idaluno AND d.id = m.iddisciplina
+AND a.nome = 'Luiz Carlos' AND d.nome = 'Inglês I'
+ORDER BY a.nome, d.nome;
 
 -- Exercício 7: Fazer uma cláusula SQL para colocar nota zero para os alunos que estão sem nota.
 -- Dica: use o comando update e o operador is null.
+UPDATE tbmatricula AS m
+SET nota = 0.0
+FROM tbaluno AS a, tbdisciplina AS d
+WHERE a.id = m.idaluno AND d.id = m.iddisciplina
+AND nota IS NULL;
+-- Consulta:
+SELECT d.nome, a.nome, m.nota FROM tbaluno AS a, tbmatricula as m, tbdisciplina AS d
+WHERE a.id = m.idaluno AND d.id = m.iddisciplina
+ORDER BY a.nome, d.nome;
 
 -- Exercício 8: Fazer uma cláusula SQL remover da tbmatricula os registros que possuem nota zero.
 -- Dica: use o comando delete.
+DELETE FROM tbmatricula
+WHERE nota = 0.0;
 
 -- Exercício 9: Fazer uma cláusula SQL remover da tbmatricula o registro que possui Inglês I e Luiz Carlos.
 -- Dica: use o comando delete.
+DELETE FROM tbmatricula as m
+USING tbaluno AS a, tbdisciplina AS d
+WHERE a.id = m.idaluno AND d.id = m.iddisciplina
+AND a.nome = 'Luiz Carlos' AND d.nome = 'Inglês I';
 
 -- Exercício 10: Fazer uma cláusula SQL remover da tbmatricula todos os registros.
 -- Dica: use o comando delete.
+DELETE FROM tbmatricula;
