@@ -56,23 +56,24 @@ and livro.isbn = '8556510787';
 
 -- Resolução correta:
 -- atividade 2 criando a tabela
-DROP TABLE IF EXISTS Livros_has_Autores;
-DROP TABLE IF EXISTS Autores, Livros;
-CREATE TABLE Autores (
+DROP TABLE IF EXISTS livros_has_Autores;
+DROP TABLE IF EXISTS autores, livros;
+
+CREATE TABLE autores (
   idAutores INTEGER NOT NULL,
-  NOME VARCHAR(30) NULL,
-  NACIONALIDADE VARCHAR(30) NULL,
+  nome VARCHAR(30) NULL,
+  nacionalidade VARCHAR(30) NULL,
   PRIMARY KEY(idAutores)
 );
 
-CREATE TABLE Livros (
-  ISBN BIGINT NOT NULL,
-  TITULO  VARCHAR(255) NULL,
-  ANODEPUBLI VARCHAR(4) NULL,
-  PRIMARY KEY(ISBN)
+CREATE TABLE livros (
+  isbn BIGINT NOT NULL,
+  titulo  VARCHAR(255) NULL,
+  anodepubli VARCHAR(4) NULL,
+  PRIMARY KEY(isbn)
 );
 
-CREATE TABLE Livros_has_Autores (
+CREATE TABLE livros_has_Autores (
   Livros_ISBN BIGINT NOT NULL,
   Autores_idAutores INTEGER NOT NULL,
   PRIMARY KEY(Livros_ISBN, Autores_idAutores)
@@ -120,9 +121,11 @@ SELECT
     autores.idautores AS "ID", 
     autores.nome AS "Nome", 
     autores.nacionalidade AS "Nacionalidade"
-FROM livros, autores, livros_has_autores
-WHERE livros.isbn = livros_has_autores.livros_isbn 
-  AND autores.idautores = livros_has_autores.autores_idautores
+FROM 
+	livros, autores, livros_has_autores
+WHERE 
+	livros.isbn = livros_has_autores.livros_isbn 
+  	AND autores.idautores = livros_has_autores.autores_idautores
 
 -- Atividade 5 Consultando somente os autores da Guerra dos Tronos
 SELECT 
