@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Animais</title>
+    <style>
+        ul {
+            font-family: Arial, sans-serif;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cadastre seus animais:</h1>
+    <form id="CadAnimais">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="ordem">Ordem:</label>
+        <input type="text" id="ordem" name="ordem" required><br><br>
+
+        <label for="classe">Classe:</label>
+        <select id="classe" name="classe" required>
+            <option value="mamifero">Mamífero</option>
+            <option value="reptil">Réptil</option>
+            <option value="anfibio">Anfíbio</option>
+            <option value="ave">Ave</option>
+            <option value="peixe">Peixe</option>
+        </select><br><br>
+
+        <input type="submit" value="CADASTRAR">
+    </form>
+
+    <h2>Lista de Animais Cadastrados:</h2>
+    <ul id="listaAnimais">
+        <!-- A lista de animais cadastrados será inserida aqui -->
+    </ul>
+
+    <script src="src/script.js"></script>
+</body>
+</html>
