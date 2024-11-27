@@ -1,17 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Animais</title>
-    <style>
-        ul {
-            font-family: Arial, sans-serif;
-        }
-        li {
-            margin: 5px 0;
-        }
-    </style>
 </head>
 <body>
     <h1>Cadastre seus animais:</h1>
@@ -25,20 +17,38 @@
         <label for="classe">Classe:</label>
         <select id="classe" name="classe" required>
             <option value="mamifero">Mamífero</option>
-            <option value="reptil">Réptil</option>
-            <option value="anfibio">Anfíbio</option>
+            <option value="reptil">Reptil</option>
+            <option value="anfibio">Anfibio</option>
             <option value="ave">Ave</option>
             <option value="peixe">Peixe</option>
-        </select><br><br>
+        </select>
 
         <input type="submit" value="CADASTRAR">
+        <input type="reset" value="APAGAR">
+
     </form>
 
-    <h2>Lista de Animais Cadastrados:</h2>
-    <ul id="listaAnimais">
-        <!-- A lista de animais cadastrados será inserida aqui -->
-    </ul>
-
-    <script src="src/script.js"></script>
+<h2>Animais Cadastrados</h2>
+    <ul id="listaAnimais"></ul>
+    <script>
+        document.getElementById('CadAnimais').addEventListener('submit', function(event) {
+           event.preventDefault(); // impede o recarregamento da página
+           
+           const nome = document.getElementById('nome').value.trim();
+           const ordem = document.getElementById('ordem').value.trim();
+           const classe = document.getElementById('classe').value;
+           
+           if(nome && ordem && classe)
+            {
+                const li = document.createElement('li')
+                li.textContent=`Nome: ${nome}, Ordem: ${ordem}, Classe: ${classe}`
+                document.getElementById('listaAnimais').appendChild(li);
+            }
+            else
+            {
+                alert('Conferir o preenchimento de todos os campos!!!')
+            }
+        });
+    </script>
 </body>
 </html>
