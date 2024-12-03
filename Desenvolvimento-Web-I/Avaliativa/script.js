@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
       let local;
       if (bairro === "jardim das oliveiras" || bairro === "vila romana") {
-        local = "ZOna Sul";
+        local = "Zona Sul";
       } else if (bairro === "jardim do portal" || bairro === "jardim panorama") {
         local = "Zona Oeste";
       }
