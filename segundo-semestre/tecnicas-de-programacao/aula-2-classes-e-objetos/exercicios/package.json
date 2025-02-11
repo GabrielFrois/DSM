@@ -1,0 +1,14 @@
+{
+  "name": "projeto",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "exemplo01": "ts-node exemplo01.ts",
+    "um": "ts-node src/um.ts",
+    "dois": "ts-node src/dois.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
