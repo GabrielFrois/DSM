@@ -5,7 +5,15 @@
   "scripts": {
     "exemplo01": "ts-node exemplo01.ts",
     "um": "ts-node src/um.ts",
-    "dois": "ts-node src/dois.ts"
+    "dois": "ts-node src/dois.ts",
+    "tres": "ts-node src/tres.ts",
+    "quatro": "ts-node src/quatro.ts",
+    "cinco": "ts-node src/cinco.ts",
+    "seis": "ts-node src/seis.ts",
+    "sete": "ts-node src/sete.ts",
+    "oito": "ts-node src/oito.ts",
+    "nove": "ts-node src/nove.ts",
+    "dez": "ts-node src/dez.ts"
   },
   "keywords": [],
   "author": "",
