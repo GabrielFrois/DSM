@@ -1,0 +1,47 @@
+class Point{
+    x: number;
+    y: number;
+
+    setX(x: number): void {
+        this.x = x;
+    }
+
+    setY(y: number): void {
+        this.y = y;
+    }
+
+    constructor(x: number, y: number){
+        this.x = x;
+        this.y = y;
+    }
+
+    distance(ponto:Point): number{
+        const dx = this.x - ponto.x;
+        const dy = this.y - ponto.y;
+        return Math.sqrt(dx ** 2 + dy ** 2);
+    }
+}
+
+class Rectangle{
+    inferiorEsquerdo: Point;
+    superiorDireito: Point;
+
+    constructor(ie: Point, sd: Point){
+        this.inferiorEsquerdo = ie;
+        this.superiorDireito = sd;
+    }
+
+    area(): number{
+        const largura = Math.abs(this.superiorDireito.x - this.inferiorEsquerdo.x);
+        const altura = Math.abs(this.superiorDireito.y - this.inferiorEsquerdo.y);
+        return largura * altura;
+    }
+}
+
+
+const sd = new Point(3,5);
+const ie = new Point(1,2);
+//observe que o construtor da classe Rectangle
+//recebe dois objetos do tipo Point como parâmetro
+const r = new Rectangle(ie,sd);
+console.log("Área:", r.area());
