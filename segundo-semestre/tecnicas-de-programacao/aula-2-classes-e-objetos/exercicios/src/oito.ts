@@ -2,14 +2,6 @@ class Point{
     x: number;
     y: number;
 
-    setX(x: number): void {
-        this.x = x;
-    }
-
-    setY(y: number): void {
-        this.y = y;
-    }
-
     constructor(x: number, y: number){
         this.x = x;
         this.y = y;
