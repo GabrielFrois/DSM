@@ -2,14 +2,6 @@ class Questao {
     enunciado: string = "";
     valor: number;
 
-    setEnunciado(enunciado: string): void {
-        this.enunciado = enunciado;
-    }
-
-    setValor(valor: number): void {
-        this.valor = valor;
-    }
-    
     constructor(enunciado: string, valor: number) {
         this.enunciado = enunciado;
         this.valor = valor;
