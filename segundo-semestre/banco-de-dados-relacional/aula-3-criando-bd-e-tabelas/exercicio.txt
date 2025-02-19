@@ -1,0 +1,15 @@
+CREATE TABLE empresa (
+	id_func SERIAL PRIMARY KEY,
+	nome VARCHAR(100) ,
+	cargo Varchar(100),
+	salario INTEGER
+);
+
+INSERT INTO empresa (nome, cargo, salario)
+VALUES 
+('Paulo Henrique', 'Gerente', 5000),
+('Carolina da Silva', 'Desenvolvedor Jr.', 3500),
+('Maria Madalena', 'Desenvolvedor Pleno', 4000);
+
+
+SELECT * FROM empresa;
