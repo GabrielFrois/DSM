@@ -1,0 +1,21 @@
+CREATE TABLE funcionarios (
+	id_func SERIAL PRIMARY KEY,
+	nome VARCHAR(100) ,
+	cargo Varchar(100),
+	salario INTEGER
+);
+
+INSERT INTO funcionarios (nome, cargo, salario)
+VALUES 
+('Paulo Henrique', 'Gerente', 8500),
+('Carolina da Silva', 'Desenvolvedor Jr.', 4500),
+('Maria Madalena', 'Desenvolvedor Pleno', 5750);
+
+UPDATE funcionarios
+SET salario = 6150.00
+WHERE nome = 'Maria Madalena';
+ 
+DELETE FROM funcionarios
+WHERE nome = 'Carolina da Silva';
+ 
+SELECT * FROM funcionarios;
