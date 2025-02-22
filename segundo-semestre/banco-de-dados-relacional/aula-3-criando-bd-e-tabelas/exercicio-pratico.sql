@@ -39,4 +39,6 @@ WHERE nome = 'Carlos Lima';
 
 DELETE FROM alunos;
 
+ROLLBACK;
+
 SELECT * FROM alunos;
