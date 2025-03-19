@@ -41,9 +41,7 @@ select * from tbl_titulo;
 select * from tbl_livros;
 select * from tbl_emprestimo;
 --
---
 
---
 --1 Listar o título, a descrição, a categoria e o status de todos os livros.
 SELECT tbl_titulo.titulo, tbl_titulo.descricao, tbl_titulo.categoria, tbl_livros.status 
 FROM tbl_titulo
@@ -71,11 +69,16 @@ WHERE tbl_livros.status != 'ALUGADO';
 
 --5 Liste os títulos e suas categorias dos livros disponiveis (retorna 1 linha).
 --tbl_titulo(codigo_titulo,titulo,categoria) tbl_livros (codigo_titulo,status)
+SELECT tbl_titulo.titulo, tbl_titulo.categoria
+FROM tbl_livros
+INNER JOIN tbl_titulo ON tbl_livros.codigo_titulo = tbl_titulo.codigo_titulo
+WHERE tbl_livros.status = 'DISPONIVEL';
 
---
 --6 Liste os nomes dos clientes e os títulos dos livros que eles têm alugados (retorna 5 linhas).
 --tbl_cliente(nome) tbl_titulo(titulo) tbl_livros (status)
-
---
-
---
+SELECT tbl_cliente.nome, tbl_titulo.titulo
+FROM tbl_cliente
+INNER JOIN tbl_emprestimo ON tbl_cliente.codigo_cliente = tbl_emprestimo.codigo_cliente
+INNER JOIN tbl_livros ON tbl_emprestimo.codigo_livro = tbl_livros.cod_livro
+INNER JOIN tbl_titulo ON tbl_livros.codigo_titulo = tbl_titulo.codigo_titulo
+WHERE tbl_livros.status = 'ALUGADO';
