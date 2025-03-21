@@ -1,0 +1,26 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "index": "ts-node src/index",
+    "ex01": "ts-node src/exercicio01",
+    "ex02": "ts-node src/exercicio02",
+    "ex03": "ts-node src/exercicio03",
+    "ex04": "ts-node src/exercicio04",
+    "ex05": "ts-node src/exercicio05",
+    "ex06": "ts-node src/exercicio06",
+    "ex07": "ts-node src/exercicio07",
+    "ex08": "ts-node src/exercicio08",
+    "ex09": "ts-node src/exercicio09"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {}
+}
