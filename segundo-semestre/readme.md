@@ -21,3 +21,9 @@ Com o projeto criado, entre na pasta front (usando o comando `cd front`) e insta
 - Para criar package.json: `npm init -y`
 - Para instalar pacotes ts-node e typescript: `npm i -D ts-node typescript`
 - Para criar o tsconfig.json: `tsc --init`
+
+## Política de Execução de Scripts Restritiva
+Caso o código não seja executado pois o sistema restringe a execução de códigos, use:  
+`Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`  
+- O `RemoteSigned` permite a execução de scripts locais, mas exige que scripts baixados da internet sejam assinados por um editor confiável
+- O `-Scope CurrentUser` altera a política apenas para o seu usuário, sem afetar outros usuários no computador
