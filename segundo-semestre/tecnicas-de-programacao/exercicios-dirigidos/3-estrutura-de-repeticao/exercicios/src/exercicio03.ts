@@ -1,5 +1,5 @@
 var cont:number;
 
-for(cont = 1; cont <= 11; cont++){
+for(cont = 4; cont <= 23; cont++){
     console.log("Numero: " + cont);
 }
