@@ -12,7 +12,8 @@
     "ex06": "ts-node src/exercicio06",
     "ex07": "ts-node src/exercicio07",
     "ex08": "ts-node src/exercicio08",
-    "ex09": "ts-node src/exercicio09"
+    "ex09": "ts-node src/exercicio09",
+    "ex10": "ts-node src/exercicio10"
   },
   "keywords": [],
   "author": "",
