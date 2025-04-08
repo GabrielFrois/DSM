@@ -1,0 +1,28 @@
+-- exercício 1
+create view v_depcidade(dep_name, cidade) as
+select d.nome, c.nome from tbl_departamentos d
+inner join tbl_cidades c
+on d.cod_cidade = c.cod_cidade;
+
+select * from v_depcidade;
+
+-- exercício 2
+create view v_depcidadehouston as
+select * from v_depcidade where cidade = 'Houston';
+
+select * from v_depcidadehouston;
+
+-- exercício 3
+create view v_opsalario (soma, media)
+as
+select sum(salario), avg(salario) from tbl_empregados;
+
+select * from v_opsalario;
+
+-- exercício 4
+create view v_empregados_salarial as
+select nome, salario
+from tbl_empregados
+where salario > 5500;
+
+select * from v_empregados_salarial;
