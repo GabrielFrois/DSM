@@ -1,0 +1,68 @@
+create database bd_bancofinanceiro;
+-- TABELA: Cliente
+CREATE TABLE cliente (
+    id_cliente SERIAL PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cpf VARCHAR(11) UNIQUE NOT NULL,
+    data_nascimento DATE
+);
+
+-- TABELA: Agência
+CREATE TABLE agencia (
+    id_agencia SERIAL PRIMARY KEY,
+    nome VARCHAR(50),
+    cidade VARCHAR(50)
+);
+
+-- TABELA: Conta
+CREATE TABLE conta (
+    id_conta SERIAL PRIMARY KEY,
+    id_cliente INT REFERENCES cliente(id_cliente),
+    id_agencia INT REFERENCES agencia(id_agencia),
+    saldo NUMERIC(10,2) DEFAULT 0
+);
+
+-- TABELA: Transação
+CREATE TABLE transacao (
+    id_transacao SERIAL PRIMARY KEY,
+    id_conta INT REFERENCES conta(id_conta),
+    tipo VARCHAR(20) CHECK (tipo IN ('Saque', 'Depósito', 'Transferência')),
+    valor NUMERIC(10,2),
+    data_transacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- TABELA: Endereço
+CREATE TABLE endereco (
+    id_endereco SERIAL PRIMARY KEY,
+    id_cliente INT REFERENCES cliente(id_cliente),
+    rua VARCHAR(100),
+    bairro VARCHAR(50),
+    cidade VARCHAR(50),
+    estado VARCHAR(2)
+);
+//Inserção de Dados
+-- Clientes
+INSERT INTO cliente (nome, cpf, data_nascimento) VALUES
+('Carlos Andrade', '12345678900', '1985-02-10'),
+('Mariana Costa', '98765432100', '1990-11-25');
+
+-- Agências
+INSERT INTO agencia (nome, cidade) VALUES
+('Agência Centro', 'São Paulo'),
+('Agência Norte', 'Rio de Janeiro');
+
+-- Contas
+INSERT INTO conta (id_cliente, id_agencia, saldo) VALUES
+(1, 1, 1000.00),
+(2, 2, 2500.50);
+
+-- Transações
+INSERT INTO transacao (id_conta, tipo, valor) VALUES
+(1, 'Depósito', 500.00),
+(1, 'Saque', 200.00),
+(2, 'Depósito', 1000.00);
+
+-- Endereços
+INSERT INTO endereco (id_cliente, rua, bairro, cidade, estado) VALUES
+(1, 'Rua das Flores, 123', 'Jardins', 'São Paulo', 'SP'),
+(2, 'Av. Brasil, 456', 'Centro', 'Rio de Janeiro', 'RJ');
