@@ -1,4 +1,4 @@
-#Conexão com PostgreSQL e SQLite
+# Resumo de Conexão com PostgreSQL
 
 ## Configuração do Projeto PostgreSQL
 
