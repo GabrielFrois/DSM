@@ -13,7 +13,7 @@
 - Diminuição de erros nos projetos de software;
 - Melhoria da posição competitiva da empresa, como instituição capaz de acompanhar a evolução.
 
-![Qualidade de Software](/img/qualidade-software.png)
+![Qualidade de Software](img/qualidade-software.png)
 ** Imagem retirada da aula do André Olímpio
 
 ## Métricas de Qualidade de Software
