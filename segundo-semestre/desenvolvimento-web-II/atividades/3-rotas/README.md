@@ -13,17 +13,8 @@ Desenvolver um aplicativo utilizando React com TypeScript para gerar sugestões 
 ## Requisitos funcionais:
 1. A aplicação deverá ser composta por três páginas:
   - Página de abertura: ao clicar no botão “Clique para começar” ou no link “Palpite”, o usuário deve ser redirecionado para a rota /palpite. Ao clicar no link “Histórico”, o usuário deve ser redirecionado para a rota /historico.
-
-  ![Imagem do home](/src/assets/home.png)
-
   - Página de sugestão: exibe automaticamente uma sugestão de aposta ao carregar a página. Deve haver também um botão “Nova sugestão” que gera uma nova aposta;
-
-  ![Imagem do palpite](/src/assets/palpite.png)
-
   - Página de histórico de sugestões: exibe todas as sugestões geradas até o momento;
-
-  ![Imagem do home](/src/assets/historico.png)  
-
 2. A comunicação entre os componentes deve ser feita usando React Context;
 
 ## Requisitos não funcionais:
