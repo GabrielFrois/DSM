@@ -3,7 +3,7 @@
 ## Descrição da atividade: 
 Desenvolver um aplicativo React com TypeScript com um campo para o usuário fornecer um nome e as letras serem exibidas separadamente, como mostrado abaixo:
 
-![Imagem da aplicação](/src/assets/context.png)
+![Imagem da aplicação](src/assets/context.png)
 
 ## Objetivos:
 - Compreender e utilizar componentes React;
