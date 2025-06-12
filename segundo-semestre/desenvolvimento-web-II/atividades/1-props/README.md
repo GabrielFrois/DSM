@@ -1,4 +1,3 @@
-Atividade 1 – Props
 # Atividade 1 - Props
 ## Descrição da atividade:
 Desenvolver um aplicativo React com TypeScript contendo dois componentes. O primeiro componente solicitará ao usuário a quantidade de números aleatórios a serem gerados. O segundo componente receberá os números fornecidos pelo usuário e os exibirá na tela.  
