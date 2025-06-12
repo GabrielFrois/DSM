@@ -2,8 +2,7 @@
 ## Descrição da atividade:
 Desenvolver um aplicativo React com TypeScript contendo dois componentes. O primeiro componente solicitará ao usuário a quantidade de números aleatórios a serem gerados. O segundo componente receberá os números fornecidos pelo usuário e os exibirá na tela.  
 
-![Imagem da aplicação](/segundo-semestre/desenvolvimento-web-II/atividades/1-props/src/assets
-/props.PNG)
+![Imagem da aplicação](/src/assets/props.PNG)
 
 ## Objetivos:
 - Compreender e utilizar componentes React;
