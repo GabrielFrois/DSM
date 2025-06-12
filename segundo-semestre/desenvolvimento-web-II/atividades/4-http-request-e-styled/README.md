@@ -3,8 +3,6 @@
 ## Descrição da atividade: 
 Desenvolver um aplicativo em React com TypeScript para exibir o resultado mais recente do sorteio da Mega-Sena. A aplicação deverá realizar uma requisição ao serviço público da Caixa Econômica Federal, disponível [aqui](https://servicebus2.caixa.gov.br/portaldeloterias/api/home/ultimos-resultados), e apresentar o resultado na interface da aplicação.
 
-![Imagem da aplicação](/src/assets/mega-sena.png)
-
 ## Objetivos:
 - Compreender e utilizar componentes React;
 - Implementar React Context para o gerenciamento de dados;
