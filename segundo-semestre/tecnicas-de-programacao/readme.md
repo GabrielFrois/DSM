@@ -549,3 +549,224 @@ const r: Resultado<string> = {
   dados: "Operação realizada"
 };
 ```
+
+## Aula 6 - Exceções
+
+### 1. Bloco try/catch
+Serve para capturar e tratar erros que ocorrem dentro de `try`.
+
+**Exemplo:**
+```typescript
+function dividir(a: number, b: number): number {
+  if (b === 0) {
+    throw new Error("Divisão por zero não é permitida.");
+  }
+  return a / b;
+}
+
+try {
+  const resultado = dividir(10, 0);
+  console.log("Resultado:", resultado);
+} catch (erro: any) {
+  console.log("Erro capturado:", erro.message);
+}
+```
+
+### 2. Palavra-chave `throw`
+Usada para lançar uma exceção. Pode lançar:
+- `Error` padrão (`new Error("mensagem")`)
+- Um objeto personalizado
+- Uma string (menos recomendado)
+
+**Exemplo com erro personalizado:**
+```typescript
+throw new Error("Algo deu errado!");
+```
+
+### 3. Palavra-chave `finally`
+O bloco `finally` sempre é executado, com ou sem erro, ideal para liberar recursos ou finalizar ações.
+
+**Exemplo:**
+```typescript
+try {
+  console.log("Executando operação...");
+  throw new Error("Falha simulada");
+} catch (e) {
+  console.log("Erro capturado");
+} finally {
+  console.log("Finalizando (sempre executa)");
+}
+```
+
+### 4. Criando Erros Personalizados
+Você pode criar classes de erro personalizadas estendendo a classe `Error`.
+
+**Exemplo:**
+```typescript
+class SaldoInsuficienteError extends Error {
+  constructor() {
+    super("Saldo insuficiente para a operação.");
+    this.name = "SaldoInsuficienteError";
+  }
+}
+
+function sacar(valor: number, saldo: number): number {
+  if (valor > saldo) {
+    throw new SaldoInsuficienteError();
+  }
+  return saldo - valor;
+}
+
+try {
+  console.log(sacar(1000, 500));
+} catch (e: any) {
+  if (e instanceof SaldoInsuficienteError) {
+    console.log("Erro de saldo:", e.message);
+  } else {
+    console.log("Erro desconhecido.");
+  }
+}
+```
+
+### 5. Boas práticas no tratamento de exceções
+- Tratar exceções previsíveis, como:
+  - Divisão por zero
+  - Dados inválidos de entrada
+  - Requisições malformadas
+- Usar classes de erro específicas, quando possível
+- Evitar capturar exceções genéricas sem verificação
+- Não usar `throw` com tipos primitivos (`throw "erro"`)
+
+### 6. Exceções em funções assíncronas (async/await)
+Você pode usar `try/catch` com `await` normalmente.
+
+**Exemplo:**
+```typescript
+async function buscarDados() {
+  try {
+    const resposta = await fetch("https://api.exemplo.com/dados");
+    const dados = await resposta.json();
+    console.log(dados);
+  } catch (erro) {
+    console.error("Erro ao buscar dados:", erro);
+  }
+}
+```
+
+## Aula 7 - Conexão com SGBD
+
+### I. Conexão com o SGBD PostgreSQL
+
+**Instalação:**
+```bash
+npm install pg
+npm install -D @types/pg  # Tipos para TypeScript
+```
+ 
+**Exemplo básico de conexão:**
+```typescript
+// src/db/postgres.ts
+import { Pool } from 'pg';
+
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'meubanco',
+  password: 'senha123',
+  port: 5432,
+});
+
+export default pool;
+```
+
+**Consulta simples:**
+```typescript
+// src/index.ts
+import pool from './db/postgres';
+
+async function listarUsuarios() {
+  const res = await pool.query('SELECT * FROM usuarios');
+  console.log(res.rows);
+}
+
+listarUsuarios();
+```
+
+**Dicas:**
+- Use `async/await` para chamadas assíncronas.
+- `pool` gerencia múltiplas conexões simultâneas.
+- Ideal para projetos maiores e produção.
+
+### 2. Conexão com o BD SQLite
+Com better-sqlite3 (mais simples para aulas):
+
+**Instalação:**
+```bash
+npm install better-sqlite3
+npm install -D @types/better-sqlite3
+```
+
+**Exemplo de conexão:**
+```typescript
+// src/db/sqlite.ts
+import Database from 'better-sqlite3';
+
+const db = new Database('banco.sqlite');
+
+// Criação de tabela se não existir
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS usuarios (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT
+  )
+`).run();
+
+export default db;
+```
+
+**Inserção e consulta:**
+```typescript
+// src/index.ts
+import db from './db/sqlite';
+
+db.prepare('INSERT INTO usuarios (nome) VALUES (?)').run('Maria');
+
+const usuarios = db.prepare('SELECT * FROM usuarios').all();
+console.log(usuarios);
+```
+
+**Alternativa com sqlite3 (assíncrona):**
+```bash
+npm install sqlite3
+npm install -D @types/sqlite3
+```
+
+```typescript
+import sqlite3 from 'sqlite3';
+
+const db = new sqlite3.Database('banco.sqlite');
+
+db.serialize(() => {
+  db.run("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY, nome TEXT)");
+
+  db.run("INSERT INTO usuarios (nome) VALUES (?)", ["João"]);
+
+  db.all("SELECT * FROM usuarios", (err, rows) => {
+    if (err) throw err;
+    console.log(rows);
+  });
+});
+```
+
+**Comparativo Final**
+| Aspecto	| PostgreSQL (`pg`)	| SQLite (`better-sqlite3`) |
+|--------------------|--------------------------|------------------------|
+| Tipo de Banco	| Cliente-servidor |	Arquivo local |
+| Recomendado para	| Produção, sistemas grandes	| Aplicações locais, testes |
+| Execução	| Assíncrona (`async/await`)	| Síncrona (mais simples) |
+| Instalação	| PostgreSQL instalado	| Apenas o pacote npm |
+
+**Boas práticas:**
+- Separe a lógica de conexão da lógica de consulta
+- Use `try/catch` para capturar erros
+- Mantenha as credenciais em variáveis de ambiente (`.env`)
