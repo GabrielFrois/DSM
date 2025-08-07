@@ -1,0 +1,16 @@
+{
+  "name": "revisao",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "index": "ts-node ./src/index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
