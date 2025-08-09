@@ -9,6 +9,8 @@
 - Para criar o tsconfig.json: `npx tsc -init`
 - `npx prisma init --datasource-provider postgresql`
 
+- Migração dos dados para o bd: `npx prisma migrate dev --name init`
+
 ## Política de Execução de Scripts Restritiva
 Caso o código não seja executado pois o sistema restringe a execução de códigos, use:  
 `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`  
