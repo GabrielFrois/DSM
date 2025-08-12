@@ -6,6 +6,7 @@
 - Para criar package.json: `npm init -y`
 - `npm install express prisma @prisma/client dotenv`
 - `npm install -D typescript ts-node-dev @types/node @types/express`
+- Instalação do TypeScript globalmente: `npm install -g typescript`
 - Para criar o tsconfig.json: `npx tsc -init`
 - `npx prisma init --datasource-provider postgresql`
 
