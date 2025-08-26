@@ -1,0 +1,25 @@
+{
+  "name": "novo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "um": "ts-node ./src/ex1",
+    "dois": "ts-node ./src/ex2",
+    "tres": "ts-node ./src/ex3",
+    "quatro": "ts-node ./src/ex4",
+    "cinco": "ts-node ./src/ex5",
+    "seis": "ts-node ./src/ex6",
+    "sete": "ts-node ./src/ex7",
+    "oito": "ts-node ./src/ex8",
+    "nove": "ts-node ./src/ex9",
+    "dez": "ts-node ./src/ex10"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
