@@ -100,3 +100,58 @@ Mesmo que seja melhor que o sistema possa ser usado sem documentação, pode ser
 Qualquer informação desse tipo deve ser fácil de pesquisar, focada na tarefa do usuário, 
 listar passos concretos a serem executados e não ser muito extensa.  
 **Exemplo:** Uma seção de "Perguntas Frequentes" (FAQ) ou um tour guiado na primeira vez que o usuário abre um aplicativo.
+
+---
+
+## O que é User Experience (UX)?
+UX, ou Experiência do Usuário, refere-se à experiência geral que uma pessoa tem ao usar qualquer produto ou serviço, seja ele digital ou físico. Ela existe desde que as pessoas começaram a usar objetos para realizar tarefas.
+
+- **Experiência Digital:** No contexto de produtos digitais como sites e aplicativos , uma experiência é considerada positiva quando o usuário consegue realizar sua tarefa (seja funcional, como pagar uma conta, ou emocional, como usar uma rede social) sem frustração ou demora.
+- **Subjetividade:** As experiências são subjetivas e influenciadas por "fatores humanos" (como habilidade, visão, humor) e "fatores externos" (como o horário ou o ambiente).
+- **Design da Experiência:** Apesar de subjetivas, essas experiências são projetadas. O UX Design não se trata apenas de encontrar a melhor solução, mas de definir corretamente o problema (o porquê), para quem ele será resolvido (o quem) e o caminho para resolvê-lo (o como).
+
+## O que é User Interface (UI)?
+UI, ou Interface do Usuário, foca especificamente na aparência visual e na interação de um produto digital.
+
+- **Componentes:** Refere-se a todos os elementos visíveis e interativos que o usuário utiliza para interagir com o produto, como layouts, ícones, botões, menus e tipografia.
+- **Objetivo:** O objetivo do UI Design é criar uma interface que seja visualmente atraente, coesa, intuitiva e fácil de usar, permitindo que o usuário interaja de forma eficiente.
+- **Impacto:** Um bom UI é fundamental para a primeira impressão do produto, ajudando a aumentar a satisfação do usuário e a fidelidade. Uma interface ruim pode levar à frustração e ao abandono.
+
+## A Diferença entre UX e UI
+Embora frequentemente usados de forma intercambiável, UX e UI são áreas distintas.
+
+- **UI Design** foca na **aparência visual e interação.**
+- **UX Design** foca na **experiência do usuário como um todo**. O UX abrange toda a jornada do usuário, desde o primeiro contato até o uso contínuo, entendendo suas necessidades, emoções e comportamentos através de pesquisas e testes.
+
+Em resumo, o UI design (a aparência) é uma parte importante do UX design (a experiência completa). Ambas as áreas são essenciais e trabalham juntas para criar produtos digitais eficientes, agradáveis e bem-sucedidos.
+
+## Princípios de Design
+O documento lista os princípios fundamentais para cada disciplina:
+
+### Princípios de UI Design: 
+- **Consistência:** Elementos de design semelhantes em todo o produto.
+- **Simplicidade:** Design limpo e sem elementos desnecessários.
+- **Legibilidade:** Fontes e cores apropriadas para fácil leitura.
+- **Navegabilidade:** Navegação intuitiva.
+- **Feedback:** Informar ao usuário o que está acontecendo.
+- **Hierarquia Visual:** Organização clara dos elementos na tela.
+- **Acessibilidade:** Ser acessível a todos os usuários.
+- **Eficiência:** Permitir que tarefas sejam realizadas sem obstáculos.
+- **Estética:** Aparência agradável que reflete a marca.
+
+### Princípios de UX Design: 
+- **Foco no usuário:** Projetar em torno das necessidades do usuário.
+- **Facilidade de uso:** Fluxos intuitivos e interface compreensível.
+- **Acessibilidade:** Acessível a todos os usuários.
+- **Consistência:** Design coeso e fluxos semelhantes.
+- **Personalização:** Permitir que usuários adaptem o produto.
+- **Feedback:** Informar o usuário sobre suas ações.
+- **Performance:** Rápido e sem interrupções.
+- **Aprendizado:** Fácil de aprender, com suporte disponível.
+- **Estética:** Aparência agradável.
+
+## Habilidades, Ferramentas e Mercado
+
+- **Habilidades Essenciais:** Para atuar em UX/UI, são necessárias habilidades como: Pesquisa do usuário, Design Thinking, Arquitetura da informação, Design de interface, Prototipagem, Testes de Usabilidade, Pensamento analítico, Comunicação, Empatia e Trabalho em equipe.
+- **Ferramentas Comuns:** As ferramentas mais utilizadas incluem Figma, Sketch, Adobe XD, InVision, Axure, Balsamiq (para wireframes), Usertesting (para testes), Google Analytics e Hotjar (para análise), e Trello (para gestão).
+- **Demanda de Mercado:** A demanda por designers de UX/UI qualificados está crescendo junto com a demanda por produtos digitais. Empresas como Google, Facebook, Amazon, Apple, Microsoft, Airbnb, Uber e Netflix contratam esses profissionais.
