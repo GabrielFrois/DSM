@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Exercício 5</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            display: flex;
+            margin: 0px;
+            height: 100vh; 
+        }
+        .container {
+            display: flex;
+            flex: 1; 
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center; 
+        }
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column; 
+            }
+            img {
+                width: 60px; 
+                height: auto; 
+            }
+        }
+        @media (min-width: 801px) {
+            .container {
+                flex-direction: row; 
+            }
+            img {
+                width: auto; 
+                height: auto; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./imagens/Fatec.png" alt="Fatec" width="87" height="41" />
+        <img src="./imagens/CPS.png" alt="CPS" width="85" height="56" />
+        <img src="./imagens/Brasao.png" alt="Brasão" width="81" height="54" />
+    </div>
+</body>
+</html>

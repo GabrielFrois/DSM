@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <title>Exercício 3</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            display: flex;
+            margin: 0px;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            flex-direction: row;
+        }
+        .um, .dois, .tres {
+            flex: 1;
+            font-size: 30px;
+        }
+        .um {
+            background-color: lightyellow;
+        }
+        .dois {
+            background-color: lightgreen;
+        }
+        .tres {
+            background-color: lightcoral;
+        }
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+            .um, .dois, .tres {
+                font-size: 20px; 
+            }
+        }        
+        @media (min-width: 801px) {
+            .container {
+                flex-direction: row;
+            }
+            .um, .dois, .tres {
+                font-size: 30px; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="um">A</div>
+        <div class="dois">B</div>
+        <div class="tres">C</div>
+    </div>
+</body>
+</html>
